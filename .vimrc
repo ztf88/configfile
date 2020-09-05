@@ -8,6 +8,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+"dracula
+Plugin 'dracula/vim', { 'name': 'dracula' }
 " https://draculatheme.com/vim
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -63,11 +65,19 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2 |
     \ set shiftwidth=2
 
+
+colorscheme dracula
 syntax on
 set encoding=utf-8
 set relativenumber
 set nu
+set showcmd
+set cursorline
+set updatetime=23000 " 设置每200个字符保存一次
+set updatecount=400 " 设置每4秒保存一次
+" set updatecount=0 " 不保存交换文件
+" set noswapfile
+" set directory=./tmp
 
 " map the keys 'jk' to the escape key to improve efficiency.
 imap jk <Esc>
-
